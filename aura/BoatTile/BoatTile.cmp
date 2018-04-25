@@ -1,0 +1,19 @@
+<aura:component description="BoatTile">
+
+    <!--Attributes-->
+    <aura:attribute name="boat" type="Boat__c" description="Instance of the Boat object" />
+    <!--Attributes-->
+
+    <!--Boat Tile-->
+    <lightning:button class="tile">
+        <!--Render Boat Picture as tile background-->
+        <div style="{! 'background-image:url(' + v.boat.Picture__c + ');' }" class="innertile">
+            <div class="lower-third">
+                <!--Display Contact Lookup Name-->
+                <h1 class="slds-truncate">{!v.boat.Contact__r.Name}</h1>
+            </div>
+        </div>
+    </lightning:button>
+    <!--Boat Tile-->
+
+</aura:component>

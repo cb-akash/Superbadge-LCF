@@ -1,3 +1,36 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
-	
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BoatSearchResults" extends="c:N3Service">
+
+    <!--Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--Handlers-->
+
+    <!--Attributes-->
+    <aura:attribute name="boats" type="Boat__c[]" description="" />
+    <aura:attribute name="boatTypeId" type="String" description="" />
+    <!--Attributes-->
+
+    <!--If list of Boats is not empty, display Boat tiles-->
+    <aura:if isTrue="{! and(empty(v.boats), v.ready)}" >
+        <!--Absolute center text-->
+        <div class="slds-align_absolute-center">
+            <p>No Boats Found</p>
+        </div>
+        <aura:set attribute="else" >
+            <!--Create a multiple-row layout-->
+            <lightning:layout multipleRows="true">
+                <!--Iterate for all boats in list-->
+                <aura:iteration var="boat" items="{!v.boats}" >
+                    <!--Create a column size 3-of-12 for each tile-->
+                    <lightning:layoutItem size="3" class="slds-p-horizontal_small slds-p-bottom_small">
+                        <!--Create an instance of BoatTile for each boat in list.
+                        Pass boat as a paremeter-->
+                        <c:BoatTile boat="{!boat}" />
+                    </lightning:layoutItem>
+                </aura:iteration>
+                <!--Iterate for all boats in list-->
+            </lightning:layout>
+            <!--If list of Boats is empty, display a message-->
+        </aura:set>
+    </aura:if>
+
 </aura:component>
