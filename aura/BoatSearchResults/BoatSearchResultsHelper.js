@@ -17,12 +17,16 @@
         //Call to Apex Aura Controller using getBoats method
         var boatTypeId = component.get('v.boatTypeId');
         var action = component.get('c.getBoats');
+        console.log('boatTypeId:', boatTypeId)
         action.setParams({
             boatTypeId : boatTypeId
         });
         action.setCallback(this, function(response) {
             console.log(response)
+            debugger;
             if(response.getState() === 'SUCCESS') {
+                console.log(response.getReturnValue())
+
                 //Set list of boats in boats attribute
                 component.set('v.boats', response.getReturnValue());
                 component.set('v.ready', true);
@@ -56,6 +60,5 @@
             };
             this.displayToast(opts)
         }.bind(this));
-    }
-
+    },
 })

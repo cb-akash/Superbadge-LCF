@@ -1,8 +1,11 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BoatSearchResults" extends="c:N3Service">
 
-    <!--Handlers-->
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
-    <!--Handlers-->
+    <!--Methods-->
+    <!--Method to search boats by boatTypeId -->
+    <aura:method name="search" action="{!c.doSearch}">
+        <aura:attribute name="boatTypeId" description="" type="String" />
+    </aura:method>
+    <!--Methods-->
 
     <!--Attributes-->
     <aura:attribute name="boats" type="Boat__c[]" description="" />

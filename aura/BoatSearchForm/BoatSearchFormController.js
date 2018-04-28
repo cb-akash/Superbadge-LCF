@@ -31,5 +31,17 @@
         component.set('v.boatType', boatType);
         console.log(component.get('v.boatType'));
     },
-    
+    onFormSubmit : function (component, event, helper) {
+        // Get the component event by using the name value from aura:registerEvent
+        var boatTypeId = component.get('v.boatType');
+        var formsubmit = component.getEvent("formsubmit");
+        //Set boatTypeId as a paremeter
+        formsubmit.setParams({
+            'formData' : {
+                'boatTypeId' : boatTypeId
+            }
+        });
+        //Fire the event
+        formsubmit.fire();
+    },
 })
