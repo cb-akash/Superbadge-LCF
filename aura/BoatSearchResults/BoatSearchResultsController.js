@@ -10,4 +10,11 @@
             helper.onSearch(component, event, helper);
         }
     },
+    onBoatSelect : function (component, event, helper) {
+        //Get boatId parameter from event
+        var boatId = event.getParam('boatId');
+        //Set the boat if to v.selectedBoatId
+        component.set('v.selectedBoatId', boatId);
+        console.log(component.get('v.selectedBoatId'));
+    },
 })

@@ -23,7 +23,6 @@
         });
         action.setCallback(this, function(response) {
             console.log(response)
-            debugger;
             if(response.getState() === 'SUCCESS') {
                 console.log(response.getReturnValue())
 

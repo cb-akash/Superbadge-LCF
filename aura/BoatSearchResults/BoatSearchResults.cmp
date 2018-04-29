@@ -7,9 +7,15 @@
     </aura:method>
     <!--Methods-->
 
+    <!--Handlers-->
+    <!--Handler BoatSelect event from c:BoatTile-->
+    <aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect}"/>
+    <!--Handlers-->
+
     <!--Attributes-->
     <aura:attribute name="boats" type="Boat__c[]" description="" />
     <aura:attribute name="boatTypeId" type="String" description="" />
+    <aura:attribute name="selectedBoatId" type="String" description="" />
     <!--Attributes-->
 
     <!--If list of Boats is not empty, display Boat tiles-->
@@ -26,8 +32,9 @@
                     <!--Create a column size 3-of-12 for each tile-->
                     <lightning:layoutItem size="3" class="slds-p-horizontal_small slds-p-bottom_small">
                         <!--Create an instance of BoatTile for each boat in list.
-                        Pass boat as a paremeter-->
-                        <c:BoatTile boat="{!boat}" />
+                        Pass boat as a parameter.
+                        Check if both iterator id and v.selectedBoatId are equal and pass a boolean.-->
+                        <c:BoatTile boat="{!boat}" selected="{! boat.Id == v.selectedBoatId ? true : false }" />
                     </lightning:layoutItem>
                 </aura:iteration>
                 <!--Iterate for all boats in list-->
