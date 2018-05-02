@@ -8,5 +8,14 @@
             boatId : boatId,
         });
         BoatSelectEvent.fire();
+
+        //Get the boat tile selected
+        var boat = component.get('v.boat')
+        //Create an instance of the BoatSelected event. Pass boat as a parameter. Fire the event.
+        var BoatSelectedEvent = $A.get('e.c:BoatSelected');
+        BoatSelectedEvent.setParams({
+            boat : boat,
+        });
+        BoatSelectedEvent.fire();
     },
 })

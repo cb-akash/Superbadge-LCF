@@ -8,6 +8,7 @@
     <!--Register Event-->
     <!--Event fired when a particular boat tile is clicked-->
     <aura:registerEvent type="c:BoatSelect" name="BoatSelect" />
+    <!--<aura:registerEvent type="c:BoatSelected" name="BoatSelected" />-->
     <!--Register Event-->
 
     <!--Boat Tile-->
