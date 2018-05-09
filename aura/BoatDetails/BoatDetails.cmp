@@ -7,6 +7,7 @@
 
     <!--Handlers-->
     <aura:handler event="c:BoatSelected" action="{!c.onBoatSelected}"/>
+    <aura:handler name="BoatReviewAdded" event="c:BoatReviewAdded" action="{!c.onBoatReviewAdded}"/>
     <!--Handlers-->
 
     <!--Use force:recordData. List all fields in fields attribute. -->
@@ -30,16 +31,17 @@
     <!--Render tabset if a boat is selected-->
     <aura:if isTrue="{!not(empty(v.boat))}">
         <div class="slds-card">
-            <lightning:tabset>
-                    <lightning:tab label="DETAILS">
+            <lightning:tabset aura:id="tabset">
+                    <lightning:tab id="boatdetailstab" label="DETAILS">
                         <!--Create an instance of BoatDetail and pass the boat retrieved from force:recordData-->
                         <c:BoatDetail boat="{!v.boat}" />
                     </lightning:tab>
-                <lightning:tab label="REVIEWS">
+                <lightning:tab id="boatreviewtab" label="REVIEWS">
                     Sample Content Two
                 </lightning:tab>
-                <lightning:tab label="ADD REVIEW">
-                    Sample Content Two
+                <lightning:tab id="boataddreviewtab" label="ADD REVIEW">
+                    <!--Create an instance of AddBoatReview and pass the boat retrieved from force:recordData-->
+                    <c:AddBoatReview boat="{!v.boat}"/>
                 </lightning:tab>
             </lightning:tabset>
         </div>

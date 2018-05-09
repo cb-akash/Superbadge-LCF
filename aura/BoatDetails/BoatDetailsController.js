@@ -11,4 +11,9 @@
     onRecordUpdated : function (component, event, helper) {
 
     },
+    onBoatReviewAdded : function (component, event, helper) {
+        //Get the tabset and set the boatreviewtab as the active tab
+        var tabset = component.find('tabset');
+        tabset.set('v.selectedTabId', 'boatreviewtab');
+    },
 })
