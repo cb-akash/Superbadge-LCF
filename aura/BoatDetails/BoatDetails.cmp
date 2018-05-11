@@ -37,7 +37,7 @@
                         <c:BoatDetail boat="{!v.boat}" />
                     </lightning:tab>
                 <lightning:tab id="boatreviewtab" label="REVIEWS">
-                    Sample Content Two
+                    <c:BoatReviews aura:id="boatReviews" boat="{!v.boat}"/>
                 </lightning:tab>
                 <lightning:tab id="boataddreviewtab" label="ADD REVIEW">
                     <!--Create an instance of AddBoatReview and pass the boat retrieved from force:recordData-->
