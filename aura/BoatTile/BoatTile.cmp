@@ -8,7 +8,9 @@
     <!--Register Event-->
     <!--Event fired when a particular boat tile is clicked-->
     <aura:registerEvent type="c:BoatSelect" name="BoatSelect" />
-    <!--<aura:registerEvent type="c:BoatSelected" name="BoatSelected" />-->
+    <aura:registerEvent type="c:BoatSelected" name="BoatSelected" />
+    <!--Event the fires the map-->
+    <aura:registerEvent type="c:PlotMapMarker" name="PlotMapMarker"/>
     <!--Register Event-->
 
     <!--Boat Tile-->
