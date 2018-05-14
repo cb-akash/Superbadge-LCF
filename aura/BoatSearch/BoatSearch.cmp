@@ -7,7 +7,7 @@
 
     <!--Boat Search Form-->
     <lightning:card title="Find a Boat" class="slds-m-bottom_small">
-        <c:BoatSearchForm/>
+        <c:BoatSearchForm />
     </lightning:card>
     <!--Boat Search Form-->
 

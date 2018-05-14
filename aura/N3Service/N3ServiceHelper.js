@@ -14,7 +14,7 @@
         var toastEvent = $A.get("e.force:showToast");
 
         if ($A.util.isUndefinedOrNull(toastEvent))
-            return console.warn('Toast is not supported');
+            return console.warn('toast is not supported');
 
         toastEvent.setParams(options).fire()
     },

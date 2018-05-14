@@ -32,9 +32,13 @@
             <lightning:inputRichText disabledCategories="FORMAT_FONT" value="{!v.boatReview.Comment__c}" />
         </lightning:layoutItem>
         <lightning:layoutItem size="12" padding="around-small">
+            <label class="slds-text-title">Rating</label>
+            <!--Instantiate FiveStarRating component, bind value with boatReview rating and define readonly value-->
+            <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12" padding="around-small">
             <lightning:button type="submit" iconName="utility:save" label="Submit" onclick="{!c.onSave}" />
         </lightning:layoutItem>
     </lightning:layout>
 
 </aura:component>
-

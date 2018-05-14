@@ -11,8 +11,7 @@
     <!--Handlers-->
 
     <!--Use force:recordData. List all fields in fields attribute. -->
-    <force:recordData
-            aura:id="service"
+    <force:recordData aura:id="service"
             recordId="{!v.id}"
             mode="VIEW"
             fields="Id,
@@ -37,7 +36,7 @@
                         <c:BoatDetail boat="{!v.boat}" />
                     </lightning:tab>
                 <lightning:tab id="boatreviewtab" label="REVIEWS">
-                    <c:BoatReviews aura:id="boatReviews" boat="{!v.boat}"/>
+                    <c:BoatReviews boat="{!v.boat}"/>
                 </lightning:tab>
                 <lightning:tab id="boataddreviewtab" label="ADD REVIEW">
                     <!--Create an instance of AddBoatReview and pass the boat retrieved from force:recordData-->

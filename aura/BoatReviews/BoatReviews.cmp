@@ -44,6 +44,10 @@
                                     <!--Use lightning:formattedRichText to correctly display rich text-->
                                     <lightning:formattedRichText value="{!boatReview.Comment__c}" class="slds-text-body_small" />
                                 </div>
+                                <div class="slds-post__content">
+                                    <!--Instantiate FiveStarRating component, bind value with boatReview rating and define readonly value-->
+                                    <c:FiveStarRating value="{!boatReview.Rating__c}" readonly="true"/>
+                                </div>
                             </article>
                         </li>
                     </aura:iteration>
