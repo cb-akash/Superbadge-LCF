@@ -2,8 +2,8 @@
 
     <!--Attributes-->
     <aura:attribute name="boat" type="Boat__c" description="Instance of the Boat object" />
-    <aura:attribute name="recordError" description="Record error from Lightning Data Service" type="String" />
-    <aura:attribute name="boatReview" description="Instance of the Boat Review object" type="BoatReview__c" />
+    <aura:attribute name="recordError" description="Record error from Lightning Data Service" type="String" access="private"/>
+    <aura:attribute name="boatReview" description="Instance of the Boat Review object" type="BoatReview__c" access="private"/>
     <!--Attributes-->
 
     <!--Handlers-->
